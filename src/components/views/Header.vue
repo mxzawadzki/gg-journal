@@ -2,7 +2,7 @@
   <header class="header">
     <h1>Good Game Journal</h1>
     <div id="nav">
-      <router-link to="/">Quests</router-link>
+      <router-link to="/quests">Quests</router-link>
       <router-link to="/notes">Notes</router-link>
       <router-link to="/bestiary">Bestiary</router-link>
     </div>

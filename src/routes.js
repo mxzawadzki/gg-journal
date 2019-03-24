@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
   routes: [{
-      path: '/',
+      path: '/quests',
       name: 'quests',
       component: Quests
     },
