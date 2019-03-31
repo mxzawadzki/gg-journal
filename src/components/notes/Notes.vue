@@ -32,11 +32,11 @@ export default {
   },
   computed: mapGetters(['allNotes']),
   setId() {
-    id = Date.now() + Math.random();
+    this.id = Date.now() + Math.random();
   },
   setDate() {
     let currentDate = new Date();
-    date = currentDate.toLocaleDateString();
+    this.date = currentDate.toLocaleDateString();
   },
   created() {
     //this.fetchNotes();

@@ -4,8 +4,8 @@
     <form @submit="onSubmit">
       <label for="title">Title:</label>
       <input type="text" name="title" v-model="title" placeholder="Add title"><br>
-      <label for="note">Note: </label>
-      <textarea name="note" id="" cols="20" rows="2" placeholder="Write a note" v-model="note"></textarea>
+      <label for="description">Note: </label>
+      <textarea name="description" id="" cols="20" rows="2" placeholder="Write a note" v-model="description"></textarea>
       <input type="submit" value="Add Note">
     </form>
   </div>
@@ -20,7 +20,7 @@ export default {
     return {
       id: '',
       title: '',
-      note: '',
+      description: '',
       date: ''
     }
   },
@@ -28,7 +28,7 @@ export default {
     ...mapActions(['addNote']),
     onSubmit(e) {
       e.preventDefault();
-      this.addNote(this.title);
+      this.addNote({id: Date.now() + Math.random(), title: this.title, description: this.description, date: new Date().toLocaleDateString()});
       //create ID
     }
   }
