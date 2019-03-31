@@ -28,7 +28,7 @@ export default {
     ...mapActions(['addNote']),
     onSubmit(e) {
       e.preventDefault();
-      this.addNote({id: Date.now() + Math.random(), title: this.title, description: this.description, date: new Date().toLocaleDateString()});
+      this.addNote({id: Date.now() + Math.random(), title: this.title, description: this.description, date: new Date().toLocaleString('en-GB')});
       //create ID
     }
   }
