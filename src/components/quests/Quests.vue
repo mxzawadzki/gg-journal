@@ -1,18 +1,40 @@
 <template>
   <div>
-    <p>Quests</p>
-    <app-quest></app-quest>
+    <button v-show="allQuestsVisible" @click="hideFinishedQuests()">Hide finished quets</button>
+    <button v-show="!allQuestsVisible" @click="showAllQuests()">Show all quests</button>
+    <div v-for="quest in allQuests" :key="quest.id">
+      <p>{{ quest.title }}</p> 
+      <p>{{ quest.description }}</p>
+      <p>{{ quest.date }}</p>
+      <br>
+    </div>
   </div>
 </template>
 <script>
-import Quest from './Quest.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Quests',
-  components: {
-    appQuest: Quest
+  data() {
+    return {
+      allQuestsVisible: true
+    }
+  },
+  methods: {
+    hideFinishedQuests() {
+      this.allQuestsVisible = false;
+    },
+    showAllQuests() {
+      this.allQuestsVisible = true;
+    }
+  },
+  computed: { 
+    ...mapGetters(['allQuests'])
+  },
+  created() {
+    //this.fetchQuests();
   }
-}
+};
 </script>
 <style>
   

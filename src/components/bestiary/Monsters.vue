@@ -1,18 +1,36 @@
 <template>
   <div>
-    <p>Monsters</p>
-    <app-monster></app-monster>
+    <div v-for="monster in allMonsters" :key="monster.id">
+      <p>{{ monster.title }}</p><button>Learn about {{monster.title}}</button>
+      <p>{{ monster.description }}</p>
+      <hr>
+      <p>Armor Class: {{ monster.armor }}</p>
+      <p>Hit Points: {{ monster.hp }}</p>
+      <p>Hit Chance: {{ monster.attack }}</p>
+      <p>Damage: {{ monster.damage }}</p>
+      <br><br>
+    </div>
   </div>
 </template>
+
 <script>
-import Monster from './Monster.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Monsters',
-  components: {
-    appMonster: Monster
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+
+  },
+  computed: mapGetters(['allMonsters']),
+  created() {
+    //this.fetchMonsters();
   }
-}
+};
 </script>
 <style>
   

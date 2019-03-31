@@ -1,20 +1,47 @@
 <template>
   <div>
-    <p>Notes go here</p>
-    <app-note></app-note>
+    <AddNote />
+    <br>
+    <div v-for="note in allNotes" :key="note.id">
+      <p>{{ note.title }}</p> 
+      <p>{{ note.description }}</p>
+      <p>{{ note.date }}</p>
+      <p @click="removeNote(note.id)">X</p>
+      <br>
+    </div>
+    <button @click="removeAllNotes()">Remove all notes</button>
   </div>
 </template>
 <script>
-import Note from './Note.vue';
 import AddNote from './AddNote.vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Notes',
+  methods: {
+    ...mapActions(['removeNote', 'removeAllNotes'])
+    //...mapActions(['addNote'])
+  },
   components: {
-    appNote: Note,
-    appAddNote: AddNote
+    AddNote
+  },
+  data() {
+    return {
+
+    }
+  },
+  computed: mapGetters(['allNotes']),
+  setId() {
+    id = Date.now() + Math.random();
+  },
+  setDate() {
+    let currentDate = new Date();
+    date = currentDate.toLocaleDateString();
+  },
+  created() {
+    //this.fetchNotes();
   }
-}
+};
 </script>
 <style>
   
