@@ -5,6 +5,7 @@ import Quests from './components/quests/Quests.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
+  mode: 'history',
   routes: [{
       path: '/quests',
       name: 'quests',
@@ -26,6 +27,5 @@ export default new VueRouter({
         name: 'quests'
       }
     }
-  ],
-  mode: 'history',
+  ]
 })
