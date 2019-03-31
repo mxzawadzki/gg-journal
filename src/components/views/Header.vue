@@ -1,6 +1,7 @@
 <template>
   <header class="header">
     <h1>Good Game Journal</h1>
+    <h2>{{ $route.name }}</h2>
     <div id="nav">
       <router-link to="/quests">Quests</router-link>
       <router-link to="/notes">Notes</router-link>
