@@ -6,7 +6,8 @@ const state = {
       armor: 'Unknown',
       hp: 'Unknown',
       attack: 'Unknown',
-      damage: 'Unknown'
+      damage: 'Unknown',
+      known: false
     },
     {
       id: 2,
@@ -15,7 +16,8 @@ const state = {
       armor: 'Unknown',
       hp: 'Unknown',
       attack: 'Unknown',
-      damage: 'Unknown'
+      damage: 'Unknown',
+      known: false
     },
     {
       id: 3,
@@ -24,7 +26,8 @@ const state = {
       armor: 'Unknown',
       hp: 'Unknown',
       attack: 'Unknown',
-      damage: 'Unknown'
+      damage: 'Unknown',
+      known: false
     },
 
   ]

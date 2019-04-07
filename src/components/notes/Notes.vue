@@ -18,28 +18,14 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Notes',
-  methods: {
-    ...mapActions(['removeNote', 'removeAllNotes'])
-    //...mapActions(['addNote'])
-  },
   components: {
     AddNote
   },
-  data() {
-    return {
-
-    }
+  methods: {
+    ...mapActions(['removeNote', 'removeAllNotes'])
   },
-  computed: mapGetters(['allNotes']),
-  setId() {
-    this.id = Date.now() + Math.random();
-  },
-  setDate() {
-    let currentDate = new Date();
-    this.date = currentDate.toLocaleDateString();
-  },
-  created() {
-    //this.fetchNotes();
+  computed: {
+    ...mapGetters(['allNotes'])
   }
 };
 </script>

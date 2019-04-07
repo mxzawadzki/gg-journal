@@ -1,24 +1,10 @@
 const state = {
   notes: [{
-      id: 1,
-      title: 'First note',
-      description: 'First note description',
-      date: undefined
-    },
-    {
-      id: 2,
-      title: 'Second note',
-      description: 'Second note description',
-      date: undefined
-    },
-    {
-      id: 3,
-      title: 'Third note',
-      description: 'Third note description',
-      date: undefined
-    },
-
-  ]
+    id: Date.now() + Math.random(),
+    title: 'First note',
+    description: 'First note description',
+    date: `${new Date().toDateString()} ${new Date().getHours()}:${new Date().getMinutes()<10?'0':''}${new Date().getMinutes()}`
+  }]
 };
 
 const getters = {
@@ -26,8 +12,8 @@ const getters = {
 };
 
 const actions = {
-  addNote({commit}, title) {
-      commit('ADD_NOTE', title)
+  addNote({commit}, note) {
+    commit('ADD_NOTE', note)
   },
   removeNote({commit}, id) {
     commit('REMOVE_NOTE', id)
@@ -38,8 +24,12 @@ const actions = {
 };
 
 const mutations = {
-  ADD_NOTE: (state, note) => state.notes.push(note),
-  REMOVE_NOTE: (state, id) => state.notes = state.notes.filter(note => note.id !== id),
+  ADD_NOTE: (state, note) => {
+    state.notes.push(note)
+  },
+  REMOVE_NOTE: (state, id) => { 
+    state.notes = state.notes.filter(note => note.id !== id) 
+  },
   REMOVE_ALL: (state) => {
     state.notes = [];
   }

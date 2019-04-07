@@ -26,9 +26,8 @@ export default {
   methods: {
 
   },
-  computed: mapGetters(['allMonsters']),
-  created() {
-    //this.fetchMonsters();
+  computed: {
+    ...mapGetters(['allMonsters'])
   }
 };
 </script>
