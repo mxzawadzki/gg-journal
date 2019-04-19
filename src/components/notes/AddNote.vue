@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>Add note</h3>
-    <form @submit.prevent="addNote(note)">
+    <form @submit.prevent="sendNote()">
       <label for="title">Title:</label>
       <input type="text" name="title" v-model="note.title" placeholder="Add title"><br>
       <label for="description">Note: </label>
@@ -12,25 +12,40 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-
 export default {
   name: 'AddNote',
   data() {
     return {
       note: {
         id: '',
+        date: '',
         title: '',
-        description: '',
-        date: ''
+        description: ''
       }
     }
   },
-  // computed: {
-  //   ...mapGetters(['getDate', 'getId']),
-  // },
   methods: {
-    ...mapActions(['addNote'])
+    setNoteData() {
+      this.$store.dispatch('setId')
+      this.$store.dispatch('setDate')
+    },
+    clearForm() {
+      this.note.id = '';
+      this.note.date = '';
+      this.note.title = '';
+      this.note.description = '';
+    },
+    sendNote() {
+      this.setNoteData();
+      const newNote = {
+        id: this.$store.getters.getId,
+        date: this.$store.getters.getDate,
+        title: this.note.title,
+        description: this.note.description
+      }
+      this.$store.dispatch('addNote', newNote)
+      this.clearForm();
+    },
   }
 }
 </script>

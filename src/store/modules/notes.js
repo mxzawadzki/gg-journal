@@ -12,13 +12,19 @@ const getters = {
 };
 
 const actions = {
-  addNote({commit}, note) {
+  addNote({
+    commit
+  }, note) {
     commit('ADD_NOTE', note)
   },
-  removeNote({commit}, id) {
+  removeNote({
+    commit
+  }, id) {
     commit('REMOVE_NOTE', id)
   },
-  removeAllNotes({commit}) {
+  removeAllNotes({
+    commit
+  }) {
     commit('REMOVE_ALL')
   }
 };
@@ -27,8 +33,8 @@ const mutations = {
   ADD_NOTE: (state, note) => {
     state.notes.push(note)
   },
-  REMOVE_NOTE: (state, id) => { 
-    state.notes = state.notes.filter(note => note.id !== id) 
+  REMOVE_NOTE: (state, id) => {
+    state.notes = state.notes.filter(note => note.id !== id)
   },
   REMOVE_ALL: (state) => {
     state.notes = [];
