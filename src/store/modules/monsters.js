@@ -7,6 +7,7 @@ const state = {
       hp: 'Unknown',
       attack: 'Unknown',
       damage: 'Unknown',
+      encountered: true,
       known: false
     },
     {
@@ -17,6 +18,7 @@ const state = {
       hp: 'Unknown',
       attack: 'Unknown',
       damage: 'Unknown',
+      encountered: false,
       known: false
     },
     {
@@ -27,9 +29,9 @@ const state = {
       hp: 'Unknown',
       attack: 'Unknown',
       damage: 'Unknown',
+      encountered: false,
       known: false
     },
-
   ]
 };
 
@@ -38,12 +40,26 @@ const getters = {
 };
 
 const actions = {
-  //need local storage
+  updateMonster({commit}, monsterStatus) {
+    commit('UPDATE_MONSTER', monsterStatus)
+  },
+  encounterMonster({commit}) {
+    commit('ENCOUNTER_MONSTER')
+  }
 };
 
 const mutations = {
   //here we'll import stuff from local storage
-  setMonsters: (state, monsters) => (state.monsters = monsters)
+  // setMonsters: (state, monsters) => (state.monsters = monsters),
+  UPDATE_MONSTER: (state, monsterStatus) => {
+    const index = state.monsters.findIndex(monster => monster.id === monsterStatus.id)
+    if (index !== -1) {
+      state.monsters.splice(index, 1, monsterStatus)
+    }
+  },
+  ENCOUNTER_MONSTER: (state) => {
+    state.monsters.push(monster)
+  }
 }
 
 export default {
