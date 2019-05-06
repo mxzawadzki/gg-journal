@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button v-show="allQuestsVisible" @click="hideFinishedQuests()">Hide finished quets</button>
-    <button v-show="!allQuestsVisible" @click="showAllQuests()">Show all quests</button>
-    <div v-for="quest in allQuests" :key="quest.id">
+    <button v-show="!allQuestsVisible" @click="showQuests()">Show all quests</button>
+    <button v-show="allQuestsVisible" @click="hideQuests()">Hide finished quets</button>
+    <div v-for="quest in quests" :key="quest.id">
       <p>{{ quest.title }}</p> 
       <p>{{ quest.description }}</p>
       <p>{{ quest.date }}</p>
@@ -17,22 +17,28 @@ export default {
   name: 'Quests',
   data() {
     return {
-      allQuestsVisible: true
+      allQuestsVisible: false,
+      quests: this.$store.getters.unfinishedQuests
     }
   },
   methods: {
-    hideFinishedQuests() {
-      this.allQuestsVisible = false;
-    },
-    showAllQuests() {
+    showQuests() {
       this.allQuestsVisible = true;
+      this.quests = this.allQuests
+    },
+    hideQuests() {
+      this.allQuestsVisible = false;
+      this.quests = this.unfinishedQuests
     }
   },
   computed: { 
-    ...mapGetters(['allQuests'])
-  },
-  created() {
-    //this.fetchQuests();
+    ...mapGetters(['allQuests', 'unfinishedQuests'])
+    // allQuests() {
+    //   return this.$store.getters.allQuests
+    // },
+    // unfinishedQuests() {
+    //   return this.$store.getters.unfinishedQuests
+    // }
   }
 };
 </script>

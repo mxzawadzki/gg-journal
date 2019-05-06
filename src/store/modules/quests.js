@@ -26,24 +26,27 @@ const state = {
 
 const getters = {
   allQuests: (state) => state.quests,
-  finishedQuests(state) {
-    return state.quests.filter(quest => quest.done)
+  unfinishedQuests: (state) => {
+    return state.quests.filter(quest => !quest.done)
   }
 };
 
 const actions = {
-
+finishQuest({commit}, id) {
+    commit('FINISH_QUEST', id)
+  },
 };
 
 const mutations = {
-  initStore(state) {
-    if (localStorage.getItem('store')) {
-      this.replaceState(Object.assign(state, JSON.parse(localStorage.getItem('store'))));
-    }
-  },
-  FINISH_QUEST(state, completed) {
-    state.quests.completed = completed;
-  }
+  // initStore(state) {
+  //   if (localStorage.getItem('store')) {
+  //     this.replaceState(Object.assign(state, JSON.parse(localStorage.getItem('store'))));
+  //   }
+  // },
+  // FINISH_QUEST(state, id) {
+  //   //target quest
+  //   // state.quests.done = true;
+  // }
 }
 
 export default {
