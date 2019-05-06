@@ -12,19 +12,13 @@ const getters = {
 };
 
 const actions = {
-  addNote({
-    commit
-  }, note) {
+  addNote({commit}, note) {
     commit('ADD_NOTE', note)
   },
-  removeNote({
-    commit
-  }, id) {
+  removeNote({commit}, id) {
     commit('REMOVE_NOTE', id)
   },
-  removeAllNotes({
-    commit
-  }) {
+  removeAllNotes({commit}) {
     commit('REMOVE_ALL')
   }
 };

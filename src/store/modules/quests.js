@@ -32,8 +32,8 @@ const getters = {
 };
 
 const actions = {
-finishQuest({commit}, id) {
-    commit('FINISH_QUEST', id)
+updateQuest({commit}, questStatus) {
+    commit('UPDATE_QUEST', questStatus)
   },
 };
 
@@ -43,10 +43,12 @@ const mutations = {
   //     this.replaceState(Object.assign(state, JSON.parse(localStorage.getItem('store'))));
   //   }
   // },
-  // FINISH_QUEST(state, id) {
-  //   //target quest
-  //   // state.quests.done = true;
-  // }
+  UPDATE_QUEST: (state, questStatus) => {
+    const index = state.quests.findIndex(quest => quest.id === questStatus.id)
+    if (index !== -1) {
+      state.quests.splice(index, 1, questStatus)
+    }
+  }
 }
 
 export default {

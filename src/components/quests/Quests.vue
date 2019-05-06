@@ -6,12 +6,14 @@
       <p>{{ quest.title }}</p> 
       <p>{{ quest.description }}</p>
       <p>{{ quest.date }}</p>
+      <p v-if="!quest.done" @click="finishQuest(quest)">✔️</p>
+      <p v-else @click="restartQuest(quest)">Finished</p>
       <br>
     </div>
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Quests',
@@ -22,14 +24,36 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['updateQuest']),
     showQuests() {
       this.allQuestsVisible = true;
-      this.quests = this.allQuests
+      this.quests = this.$store.getters.allQuests
     },
     hideQuests() {
       this.allQuestsVisible = false;
-      this.quests = this.unfinishedQuests
-    }
+      this.quests = this.$store.getters.unfinishedQuests
+    },
+    finishQuest(quest) {
+      const questStatus = {
+        id: quest.id,
+        title: quest.title,
+        description: quest.description,
+        date: quest.date,
+        done: true
+      };
+      this.$store.dispatch('updateQuest', questStatus)
+      this.quests = this.$store.getters.unfinishedQuests
+    },
+    restartQuest(quest) {
+      const questStatus = {
+        id: quest.id,
+        title: quest.title,
+        description: quest.description,
+        date: quest.date,
+        done: false
+      };
+      this.$store.dispatch('updateQuest', questStatus)
+    },
   },
   computed: { 
     ...mapGetters(['allQuests', 'unfinishedQuests'])
