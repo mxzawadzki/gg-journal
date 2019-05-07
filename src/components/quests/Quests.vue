@@ -42,7 +42,9 @@ export default {
         done: true
       };
       this.$store.dispatch('updateQuest', questStatus)
-      this.quests = this.$store.getters.unfinishedQuests
+      if (!this.allQuestsVisible) {
+        this.quests = this.$store.getters.unfinishedQuests
+      }
     },
     restartQuest(quest) {
       const questStatus = {
