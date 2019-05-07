@@ -1,23 +1,23 @@
 const state = {
   quests: [{
       id: 1,
-      title: 'First Quest',
-      description: 'First quest description',
-      date: undefined,
+      title: 'Kill ten rats',
+      description: 'One week ago Rat King moved to town\'s sewers, it is time to get rid of this vermin plague.',
+      date: `${new Date().toDateString()} ${new Date().getHours()}:${new Date().getMinutes()<10?'0':''}${new Date().getMinutes()}`,
       done: true
     },
     {
       id: 2,
-      title: 'Second Quest',
-      description: 'Second quest description',
-      date: undefined,
+      title: 'Basket of goodies',
+      description: 'Old nice lady requested one basket of blueberries, you couldn\'t possiby refuse. Nearby "Forest of Darkest Horrors" is waiting for you.',
+      date: `${new Date().toDateString()} ${new Date().getHours()}:${new Date().getMinutes()<10?'0':''}${new Date().getMinutes()}`,
       done: false
     },
     {
       id: 3,
-      title: 'Third Quest',
-      description: 'Third quest description',
-      date: undefined,
+      title: 'Slay the Pumpkin Demon',
+      description: 'Pumpkin Demon terrorizes poor peasants in the country, forcingly feeding them pumpkin jam.',
+      date: `${new Date().toDateString()} ${new Date().getHours()}:${new Date().getMinutes()<10?'0':''}${new Date().getMinutes()}`,
       done: false
     },
 

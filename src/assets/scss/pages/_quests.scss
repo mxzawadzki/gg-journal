@@ -1,0 +1,35 @@
+.quest {
+  padding: 0 1.2rem;
+  font-family: $base-font-family;
+  &__btn {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-family: $ui-font-family;
+    background-color: #e4e4e4;
+    width: 10rem;
+    padding: .25rem 0;
+    margin: 1.2rem 0;
+    border: none;
+  }
+
+  &__item {
+    margin-bottom: 1.2rem;
+
+    &--done {
+      color: #777;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__date {
+    font-size: .8rem;
+  }
+
+  &__text {
+    margin: .25rem 0;
+  }
+}

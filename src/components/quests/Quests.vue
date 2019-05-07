@@ -1,14 +1,13 @@
 <template>
   <div class="quest">
     <button class="quest__btn" v-show="!allQuestsVisible" @click="showQuests()">Show all quests</button>
-    <button class="quest__btn" v-show="allQuestsVisible" @click="hideQuests()">Hide finished quets</button>
-    <div class="quest__item" v-for="quest in quests" :key="quest.id">
+    <button class="quest__btn" v-show="allQuestsVisible" @click="hideQuests()">Hide finished quests</button>
+    <div class="quest__item" :class="{'quest__item--done': quest.done}" v-for="quest in quests" :key="quest.id">
       <p class="quest__title">{{ quest.title }}</p> 
-      <p class="quest__text">{{ quest.description }}</p>
       <p class="quest__date">{{ quest.date }}</p>
-      <p v-if="!quest.done" @click="finishQuest(quest)">✔️</p>
-      <p v-else @click="restartQuest(quest)">Finished</p>
-      <br>
+      <p class="quest__text">{{ quest.description }}</p>
+      <button class="quest__btn" v-if="!quest.done" @click="finishQuest(quest)">Finish ✔️</button>
+      <button class="quest__btn" v-else @click="restartQuest(quest)">Restart</button>
     </div>
   </div>
 </template>
