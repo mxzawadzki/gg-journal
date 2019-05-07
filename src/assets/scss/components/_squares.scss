@@ -1,0 +1,187 @@
+// .loading {
+//   &__square-group-1 {
+//     position: absolute;
+//     top: 0;
+//     left: 5%;
+
+//     .loading__square-1 {
+//       @include square(2rem);
+//       top: -1rem;
+//       left: 1rem;
+//     }
+    
+//     .loading__square-2 {
+//       @include square(1rem);
+//       top: 2rem;
+//       left: 1.5rem;
+//     }
+//   }
+
+//   &__square-group-2 {
+//     position: absolute;
+//     bottom: 0;
+//     right: 5%;
+
+//     .loading__square-3 {
+//       @include square(2rem);
+//       bottom: -1rem;
+//       right: 1rem;
+//     }
+    
+//     .loading__square-4 {
+//       @include square(1rem);
+//       bottom: 2rem;
+//       right: 1.5rem;
+//     }
+//   }
+
+//   &__square-group-3 {
+//     position: absolute;
+//     top: 20%;
+//     left: 25%;
+
+//     .loading__square-5 {
+//       @include square(.5rem);
+//       top: 0rem;
+//       left: 0rem;
+//     }
+  
+//     .loading__square-6 {
+//       @include square(1rem);
+//       top: 1rem;
+//       left: -.25rem;
+//     }
+  
+//     .loading__square-7 {
+//       @include square(.5rem);
+//       top: 2.5rem;
+//     }
+//   }
+
+//   &__square-group-4 {
+//     position: absolute;
+//     top: 10%;
+//     right: 25%;
+
+//     .loading__square-8 {
+//       @include square(2rem);
+//       top: 0rem;
+//       left: 0rem;
+//     }
+//   }
+
+//   &__square-group-5 {
+//     position: absolute;
+//     top: 30%;
+//     right: 15%;
+
+//     .loading__square-9 {
+//       @include square(.5rem);
+//       top: 0rem;
+//       left: 0rem;
+//     }
+  
+//     .loading__square-10 {
+//       @include square(1rem);
+//       top: 1rem;
+//       left: -.25rem;
+//     }
+//   }
+
+//   &__square-group-6 {
+//     position: absolute;
+//     top: 65%;
+//     right: 10%;
+
+//     .loading__square-11 {
+//       @include square(1rem);
+//       top: 0rem;
+//       left: 0rem;
+//     }
+  
+//     .loading__square-12 {
+//       @include square(.5rem);
+//       top: 1.5rem;
+//       left: .25rem;
+//     }
+//   }
+
+//   &__square-group-7 {
+//     position: absolute;
+//     top: 80%;
+//     right: 30%;
+
+//     .loading__square-13 {
+//       @include square(.5rem);
+//       top: 0rem;
+//       left: 0rem;
+//     }
+  
+//     .loading__square-14 {
+//       @include square(1rem);
+//       top: 1rem;
+//       left: -.25rem;
+//     }
+
+//     .loading__square-15 {
+//       @include square(1rem);
+//       top: 2.5rem;
+//       left: -.25rem;
+//     }
+//   }
+
+//   &__square-group-8 {
+//     position: absolute;
+//     top: 87%;
+//     left: 20%;
+
+//     .loading__square-16 {
+//       @include square(2rem);
+//       top: 0rem;
+//       left: 0rem;
+//     }
+//   }
+
+//   &__square-group-9 {
+//     position: absolute;
+//     top: 70%;
+//     left: 10%;
+
+//     .loading__square-17 {
+//       @include square(.5rem);
+//       top: 0rem;
+//       left: 0rem;
+//     }
+  
+//     .loading__square-18 {
+//       @include square(1rem);
+//       top: 1rem;
+//       left: -.25rem;
+//     }
+//   }
+
+//   &__square-loading {
+//     @include square(.5rem);
+//     background-color: $loading-squares;
+//     display: inline-block;
+//     position: relative;
+//     margin: .5rem;
+//     //bottom: 2rem;
+//     //right: 1.5rem;
+//   }
+
+//   &__square--loading-1 {
+//     animation: loading 1s ease-out infinite;
+//     animation-delay: 0s;
+//   }
+
+//   &__square--loading-2 {
+//     animation: loading 1s ease-out infinite;
+//     animation-delay: .1s;
+//   }
+
+//   &__square--loading-3 {
+//     animation: loading 1s ease-out infinite;
+//     animation-delay: .2s;
+//   }
+// }

@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <button v-show="!allQuestsVisible" @click="showQuests()">Show all quests</button>
-    <button v-show="allQuestsVisible" @click="hideQuests()">Hide finished quets</button>
-    <div v-for="quest in quests" :key="quest.id">
-      <p>{{ quest.title }}</p> 
-      <p>{{ quest.description }}</p>
-      <p>{{ quest.date }}</p>
+  <div class="quest">
+    <button class="quest__btn" v-show="!allQuestsVisible" @click="showQuests()">Show all quests</button>
+    <button class="quest__btn" v-show="allQuestsVisible" @click="hideQuests()">Hide finished quets</button>
+    <div class="quest__item" v-for="quest in quests" :key="quest.id">
+      <p class="quest__title">{{ quest.title }}</p> 
+      <p class="quest__text">{{ quest.description }}</p>
+      <p class="quest__date">{{ quest.date }}</p>
       <p v-if="!quest.done" @click="finishQuest(quest)">✔️</p>
       <p v-else @click="restartQuest(quest)">Finished</p>
       <br>
@@ -68,6 +68,7 @@ export default {
   }
 };
 </script>
+
 <style>
   
 </style>
