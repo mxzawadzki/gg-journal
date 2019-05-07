@@ -44,7 +44,8 @@ export default {
       this.$store.dispatch('updateMonster', monsterStatus)
     },
     encounterMonster() {
-      // this.$store.dispatch('encounterMonster')
+      const monsterId = this.monsterCounter
+      this.$store.dispatch('encounterMonster', monsterId)
       this.monsterCounter++
     }
   },
@@ -53,6 +54,7 @@ export default {
   }
 };
 </script>
+
 <style>
   
 </style>
