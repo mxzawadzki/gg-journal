@@ -9,7 +9,7 @@ const state = {
     {
       id: 2,
       title: 'Basket of goodies',
-      description: 'Nice old lady requested one basket of blueberries, you couldn\'t possiby refuse. Nearby "Forest of Darkest Horrors" is waiting for you.',
+      description: 'Nice old lady requested one basket of blueberries, you couldn\'t possibly refuse. Nearby "Forest of Darkest Horrors" is waiting for you.',
       date: `${new Date().toDateString()} ${new Date().getHours()}:${new Date().getMinutes()<10?'0':''}${new Date().getMinutes()}`,
       done: false
     },
