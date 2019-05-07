@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <h3>Add note</h3>
-    <form @submit.prevent="sendNote()">
-      <label for="title">Title:</label>
-      <input type="text" name="title" v-model="note.title" placeholder="Add title"><br>
-      <label for="description">Note: </label>
-      <textarea name="description" id="" cols="20" rows="2" placeholder="Write a note" v-model="note.description"></textarea>
-      <input type="submit" value="Add Note">
+  <div class="addnote">
+    <h3 class="addnote__title">Add note</h3>
+    <form class="form" @submit.prevent="sendNote()">
+      <label class="form__title" for="title">Title:</label>
+      <input class="form__input" type="text" name="title" v-model="note.title" placeholder="Add title"><br>
+      <label class="form__title" for="description">Note: </label>
+      <textarea class="form__text" name="description" id="" cols="20" rows="2" placeholder="Write a note" v-model="note.description"></textarea>
+      <input class="form__btn" type="submit" value="Add Note">
     </form>
   </div>
 </template>

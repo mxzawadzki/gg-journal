@@ -1,10 +1,18 @@
 const state = {
-  notes: [{
-    id: Date.now() + Math.random(),
-    title: 'First note',
-    description: 'First note description',
-    date: `${new Date().toDateString()} ${new Date().getHours()}:${new Date().getMinutes()<10?'0':''}${new Date().getMinutes()}`
-  }]
+  notes: [
+    {
+      id: Date.now() + Math.random(),
+      title: 'Lost my favourite fork',
+      description: 'Can\'t find it anywhere, probably left it in the stables?',
+      date: `${new Date().toDateString()} ${new Date().getHours()}:${new Date().getMinutes()<10?'0':''}${new Date().getMinutes()}`
+    },
+    {
+      id: Date.now() + Math.random(),
+      title: 'Ate something strange',
+      description: 'Not feeling very well at the moment, should be more careful next time.',
+      date: `${new Date().toDateString()} ${new Date().getHours()}:${new Date().getMinutes()<10?'0':''}${new Date().getMinutes()}`
+    },
+  ]
 };
 
 const getters = {

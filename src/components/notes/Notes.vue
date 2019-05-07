@@ -1,15 +1,13 @@
 <template>
-  <div>
+  <div class="notes">
     <AddNote />
-    <br>
-    <div v-for="note in allNotes" :key="note.id">
-      <p>{{ note.title }}</p> 
-      <p>{{ note.description }}</p>
-      <p>{{ note.date }}</p>
-      <p @click="removeNote(note.id)">X</p>
-      <br>
+    <div class="notes__item" v-for="note in allNotes" :key="note.id">
+      <p class="notes__title">{{ note.title }}</p> 
+      <p class="notes__date">{{ note.date }}</p>
+      <p class="notes__text">{{ note.description }}</p>
+      <button class="notes__btn" @click="removeNote(note.id)">Remove note ❌</button>
     </div>
-    <button @click="removeAllNotes()">Remove all notes</button>
+    <button class="notes__btn notes__btn--remove-all" @click="removeAllNotes()">Remove all notes</button>
   </div>
 </template>
 <script>
