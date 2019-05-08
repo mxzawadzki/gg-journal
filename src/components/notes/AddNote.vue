@@ -6,6 +6,7 @@
       <input class="form__input" type="text" name="title" v-model="note.title" placeholder="Add title"><br>
       <label class="form__title" for="description">Note: </label>
       <textarea class="form__text" name="description" id="" cols="20" rows="2" placeholder="Write a note" v-model="note.description"></textarea>
+      <p class="form__title form__alert">{{ alert }}</p>
       <input class="form__btn" type="submit" value="Add Note">
     </form>
   </div>
@@ -21,7 +22,8 @@ export default {
         date: '',
         title: '',
         description: ''
-      }
+      },
+      alert: ''
     }
   },
   methods: {
@@ -36,15 +38,20 @@ export default {
       this.note.description = '';
     },
     sendNote() {
-      this.setNoteData();
-      const newNote = {
-        id: this.$store.getters.getId,
-        date: this.$store.getters.getDate,
-        title: this.note.title,
-        description: this.note.description
+      if (this.note.title == '' || this.note.description == '') {
+        this.alert = 'Please fill the fields.'
+      } else {
+        this.setNoteData();
+          const newNote = {
+          id: this.$store.getters.getId,
+          date: this.$store.getters.getDate,
+          title: this.note.title,
+          description: this.note.description
+          }
+        this.$store.dispatch('addNote', newNote)
+        this.clearForm();
+        this.alert = '';
       }
-      this.$store.dispatch('addNote', newNote)
-      this.clearForm();
     },
   }
 }
