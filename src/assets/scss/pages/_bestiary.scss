@@ -1,8 +1,6 @@
-.quest {
+.bestiary {
   padding: 1.2rem;
   font-family: $base-font-family;
-  position: relative;
-  z-index: 2;
 
   &__btn {
     text-align: center;
@@ -41,22 +39,13 @@
   &__text {
     margin: .5rem 0 .75rem 0;
   }
-}
 
-.container {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
+  &__stat {
+    font-weight: 700;
+    color: $secondary-color;
+  }
 
-.image {
-  position: fixed;
-  background: url('') no-repeat top;
-  background-size: cover;
-  height: 300px;
-  width: 300px;
-  bottom: -2rem;
-  right: -10rem;
-  opacity: .15;
-  z-index: 1;
+  &__stats {
+    margin-bottom: 2.4rem;
+  }
 }

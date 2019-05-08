@@ -19,19 +19,8 @@ a {
 }
 
 .page {
-  color: #212121;
+  color: #272727;
   font-family: "Montserrat", sans-serif;
-}
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
 }
 
 .header {
@@ -101,6 +90,8 @@ a {
 .quest {
   padding: 1.2rem;
   font-family: "Montserrat", sans-serif;
+  position: relative;
+  z-index: 2;
 }
 
 .quest__btn {
@@ -115,6 +106,11 @@ a {
   border: none;
 }
 
+.quest__btn:hover {
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
 .quest__item {
   margin-bottom: 1.2rem;
 }
@@ -125,6 +121,7 @@ a {
 
 .quest__title {
   font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .quest__date {
@@ -133,6 +130,24 @@ a {
 
 .quest__text {
   margin: .5rem 0 .75rem 0;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image {
+  position: fixed;
+  background: url("") no-repeat top;
+  background-size: cover;
+  height: 300px;
+  width: 300px;
+  bottom: -2rem;
+  right: -10rem;
+  opacity: .15;
+  z-index: 1;
 }
 
 .notes {
@@ -152,9 +167,19 @@ a {
   border: none;
 }
 
+.notes__btn:hover {
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
 .notes__btn--remove-all {
-  color: #fff;
+  color: #f5f5f5;
   background-color: #af3f57;
+}
+
+.notes__btn--remove-all:hover {
+  background-color: #9e2e46;
+  cursor: pointer;
 }
 
 .notes__item {
@@ -163,6 +188,7 @@ a {
 
 .notes__title {
   font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .notes__date {
@@ -178,7 +204,7 @@ a {
 }
 
 .addnote__title {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .form {
@@ -197,7 +223,7 @@ a {
   background-color: #f5f5f5;
   font-family: "Montserrat", sans-serif;
   height: 1.2rem;
-  width: 20rem;
+  width: 17.5rem;
 }
 
 .form__text {
@@ -206,7 +232,7 @@ a {
   background-color: #f5f5f5;
   font-family: "Montserrat", sans-serif;
   height: 1.2rem;
-  width: 20rem;
+  width: 17.5rem;
 }
 
 .form__btn {
@@ -220,6 +246,67 @@ a {
   padding: .25rem 0;
   margin: .75rem 0 1.2rem 0;
   border: none;
+}
+
+.form__btn:hover {
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
+.form__alert {
+  color: #af3f57;
+}
+
+.bestiary {
+  padding: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.bestiary__btn {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .8rem;
+  font-family: "Oswald", sans-serif;
+  background-color: #e4e4e4;
+  width: 10rem;
+  padding: .25rem 0;
+  margin-bottom: 1.2rem;
+  border: none;
+}
+
+.bestiary__btn:hover {
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
+.bestiary__item {
+  margin-bottom: 1.2rem;
+}
+
+.bestiary__item--done {
+  color: #777;
+}
+
+.bestiary__title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.bestiary__date {
+  font-size: .8rem;
+}
+
+.bestiary__text {
+  margin: .5rem 0 .75rem 0;
+}
+
+.bestiary__stat {
+  font-weight: 700;
+  color: #af3f57;
+}
+
+.bestiary__stats {
+  margin-bottom: 2.4rem;
 }
 
 .page {
