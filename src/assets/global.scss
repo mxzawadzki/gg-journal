@@ -19,10 +19,33 @@ $button-hover-black: #0c0c0c;
 $button-hover-white: #d3d3d3;
 $button-hover-delete: #9e2e46;
 
+$base-font-family: 'Montserrat', sans-serif;
+$title-font-family: 'Montserrat', sans-serif;
+$ui-font-family: 'Roboto Condensed', sans-serif;
 
-$base-font-family: 'Montserrat',
-sans-serif;
-$title-font-family: 'Uncial Antiqua',
-sans-serif;
-$ui-font-family: 'Oswald',
-sans-serif;
+html {
+  box-sizing: border-box;
+  background-color: $background-white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $base-font-family;
+}
+
+a {
+  color: $text-color-white;
+  text-decoration: none;
+}
+
+.page {
+  color: $primary-color;
+  font-family: $base-font-family;
+}
